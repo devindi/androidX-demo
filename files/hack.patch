@@ -1,0 +1,30 @@
+diff --git a/cardview/src/main/java/androidx/cardview/widget/RoundRectDrawable.java b/cardview/src/main/java/androidx/cardview/widget/RoundRectDrawable.java
+index 872ecbf0b4..1aa8448da1 100644
+--- a/cardview/src/main/java/androidx/cardview/widget/RoundRectDrawable.java
++++ b/cardview/src/main/java/androidx/cardview/widget/RoundRectDrawable.java
+@@ -41,6 +41,7 @@ import androidx.annotation.RequiresApi;
+ class RoundRectDrawable extends Drawable {
+     private float mRadius;
+     private final Paint mPaint;
++    private final Paint mSecondPaint;
+     private final RectF mBoundsF;
+     private final Rect mBoundsI;
+     private float mPadding;
+@@ -55,6 +56,9 @@ class RoundRectDrawable extends Drawable {
+     RoundRectDrawable(ColorStateList backgroundColor, float radius) {
+         mRadius = radius;
+         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
++        mSecondPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
++        mSecondPaint.setColor(0xFFFF0000);
++        mSecondPaint.setTextSize(50);
+         setBackground(backgroundColor);
+ 
+         mBoundsF = new RectF();
+@@ -95,6 +99,7 @@ class RoundRectDrawable extends Drawable {
+         }
+ 
+         canvas.drawRoundRect(mBoundsF, mRadius, mRadius, paint);
++        canvas.drawText("Hacked", 100, 100, mSecondPaint);
+ 
+         if (clearColorFilter) {
+             paint.setColorFilter(null);

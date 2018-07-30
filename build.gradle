@@ -17,7 +17,9 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        maven {
+            url '../../androidX-source/out/host/gradle/frameworks/support/build/support_repo'
+        }
     }
 }
 

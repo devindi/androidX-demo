@@ -18,8 +18,8 @@ android {
     }
 }
 
-def cardViewVer = '1.0.0-beta01'
+def hackedCardViewVer = '1.0.0-rc01'
 
 dependencies {
-    implementation "androidx.cardview:cardview:$cardViewVer"
+    implementation "androidx.cardview:cardview:$hackedCardViewVer"
 }
